@@ -10,7 +10,7 @@ thickness_bottom = 2;
 w_back =70;
 h_back = 45;
 
-echo("Работа Имя Фамилия!");
+echo("Воробьев Савелий Игоревич!");
 build_frame();
 
 module build_frame() {
