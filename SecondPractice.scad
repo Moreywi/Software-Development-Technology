@@ -1,4 +1,6 @@
-    echo("Работа Воробьева Савелия");
+use <controller.scad>
+
+echo("Работа Воробьева Савелия");
 
 d_akkum = 18;
 h_akkum = 65;
@@ -16,12 +18,15 @@ thickness_back = 1;
 h_walls = 4;
 gap_backlight = 1.5;
 
+w_controller = 20;
 
-frame_debug();
+kit_frame();
+translate([w_back/2 + w_controller/2 + 2 * thickness_walls, 0, 0])
+kit_controller();
 
-translate([0, 0, thickness_bottom/2 + thickness_top/2])
-
-window_frame();
+//frame_debug();
+//translate([0, 0, thickness_bottom/2 + thickness_top/2])
+//window_frame();
 
 module window_frame() { 
     difference() {
