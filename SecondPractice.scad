@@ -21,14 +21,20 @@ gap_backlight = 1.5;
 w_controller = 20;
 
 kit_frame();
-translate([w_back/2 + w_controller/2 + 2 * thickness_walls - 0.5, 0, 0])
-kit_controller();
 
 //translate([1, 0, 0])
 //debug_controller();
 //frame_debug();
 //translate([0, 0, thickness_bottom/2 + thickness_top/2])
 //window_frame();
+//walls();
+
+for(i=[1:3]) {
+    echo("i = ", i);
+    translate([i*3, 0, 0])
+    color("red")
+    cylinder(h=30, d=2, center=true, $fn=32);
+}
 
 module window_frame() { 
     difference() {
@@ -51,7 +57,10 @@ module kit_frame() {
     translate([0, 0, h_walls/2+thickness_bottom/2])
     walls();
     wires();
+    translate([0, 0, thickness_bottom/2+thickness_top/2+0.1])
     window_frame();
+    translate([w_back/2+w_controller/2+2*thickness_walls-0.51, 0, 0])
+    kit_controller();
 }
 
 module wires() {
