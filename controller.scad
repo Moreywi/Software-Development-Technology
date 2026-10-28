@@ -12,8 +12,14 @@ gap_backlight = 1.5;
 //kit_controller();
 //walls();
 // debug_controller();
-frame_controller();
 
+test_print_walls();
+
+module test_print_walls(){
+    frame_controller();
+    translate([-w_controller-width_frame_window-2, 0, h_walls/2])
+    walls();
+}
 module frame_controller() {
     difference() {
         cube([w_controller, h_back, thickness_top], center=true);
